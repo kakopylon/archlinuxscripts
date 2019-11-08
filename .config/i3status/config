@@ -1,0 +1,35 @@
+general {
+    colors   = false
+}
+
+order += "ethernet enp0s25"
+order += "wireless wlp0s20f3"
+order += "volume master"
+order += "battery 0"
+order += "tztime local"
+
+ethernet enp0s25 {
+    format_up = "📶 %ip (%speed)"
+    format_down = "🚫 down"
+}
+
+wireless wlp0s20f3 {
+    format_up   = "📶 (%quality at %essid, %bitrate) %ip"
+    format_down = "🚫  down"
+}
+
+volume master {
+    format       = "🔊 %volume"
+    format_muted = "🔇 %volume"
+    device       = "default"
+    mixer        = "Master"
+    mixer_idx    = 1
+}
+
+battery 0 {
+    format = "🔋 %percentage"
+}
+
+tztime local {
+    format = "📅 %Y-%m-%d %H:%M:%S"
+}
